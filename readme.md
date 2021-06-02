@@ -1,4 +1,4 @@
-# Optimize Image for Blender
+# Ellipse Crop Image for Blender Pipeline Step
 Given an
 - input Image INPUT,
 - (optional) a 2 dimensional coordinate (x@y) TOPLEFT in image range, defaults to 2@2
