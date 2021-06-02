@@ -16,6 +16,7 @@ ideal for boolean merging with a 3D model in Blender as the needed 3D position o
 
 
 ## Usage
+```
 usage: blenderPreparation.py [-h] -i INPUT [-tl TOPLEFT] [-dr DOWNRIGHT] -o OUTPUT
 
 optional arguments:
@@ -28,6 +29,7 @@ optional arguments:
                         coordinate of a pixel in the image interpreted as the down right corner (x@y)
   -o OUTPUT, --output OUTPUT
                         the file path to save the result to
+```
                         
 ## Example
 python3 blenderPreparation.py -i some_cute_cat.jpg -o cat_result.jpg
