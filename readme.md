@@ -31,5 +31,5 @@ optional arguments:
                         
 ## Example
 python3 blenderPreparation.py -i some_cute_cat.jpg -o cat_result.jpg
-![alt text](https://github.com/Siegler-von-Catan/optimizeImageForBlender/some_cute_cat.jpg)
-![alt text](https://github.com/Siegler-von-Catan/optimizeImageForBlender/cat_result.jpg)
+![alt text](https://github.com/Siegler-von-Catan/optimizeImageForBlender/blob/main/some_cute_cat.jpg)
+![alt text](https://github.com/Siegler-von-Catan/optimizeImageForBlender/blob/main/cat_result.jpg)
