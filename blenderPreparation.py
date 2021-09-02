@@ -124,8 +124,18 @@ def main():
 
     image = cv.imread(args["input"], cv.IMREAD_GRAYSCALE)
     image_height, image_width = image.shape
+
+    maxWidth = image_width-1-borderPixels
+    maxHeight = image_height-1-borderPixels
+
     topleft = args["topleft"] if args["topleft"] else [borderPixels, borderPixels]
-    downright = args["downright"] if args["downright"] else [image_width-1-borderPixels, image_height-1-borderPixels]
+    downright = args["downright"] if args["downright"] else [maxWidth, maxHeight]
+
+    # ensure valid range
+    topleft[0] = max(borderPixels, min(topleft[0], maxWidth))
+    topleft[1] = max(borderPixels, min(topleft[1], maxHeight))
+    downright[0] = max(borderPixels, min(downright[0], maxWidth))
+    downright[1] = max(borderPixels, min(downright[1], maxHeight))
 
     result = process(image, topleft, downright)
     cv.imwrite(args["output"], result)
