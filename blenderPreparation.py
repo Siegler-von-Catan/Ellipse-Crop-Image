@@ -92,8 +92,22 @@ def process(image, topleft, downright):
     final = cv.bitwise_or(fg, bk)
     # crop image to bounding rect
     final = crop_image_to_contour_AABB(final, boundingRect)
+    # normalize value range of height map to [0;255]
+    normalize_value_range(final)
 
     return final
+
+def normalize_value_range(image):
+    pixelValueRange = np.ptp(image)
+    minPixelValue = np.min(image)
+
+    h = image.shape[0]
+    w = image.shape[1]
+
+    for y in range(0, h):
+        for x in range(0, w):
+            image[y, x] = (255*((image[y, x] - minPixelValue)/pixelValueRange)).astype(int)
+
 
 def get_mask_on(image, topleft, downright):
     mask = np.zeros(image.shape[:2], np.uint8)
